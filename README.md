@@ -25,6 +25,4 @@ https://merry-griffin-bd7201.netlify.app/
 ## Purpose
 This project demonstrates my ability to build interactive front-end web applications using clean and structured code.
 
----
 
-Built by Tuamay Assefa
