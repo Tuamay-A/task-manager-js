@@ -16,7 +16,7 @@ A simple and responsive task manager application built using HTML, CSS, and vani
 - Browser localStorage
 
 ## Live Demo
-https://your-netlify-link.netlify.app
+https://merry-griffin-bd7201.netlify.app/
 
 ## Purpose
 This project demonstrates my ability to build interactive front-end web applications using clean and structured code.
