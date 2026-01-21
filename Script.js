@@ -6,11 +6,10 @@
   const itemsLeftEl = document.getElementById('items-left');
   const clearCompletedBtn = document.getElementById('clear-completed');
 
-  // State
+
   let todos = [];
   let filter = 'all';
 
-  // Load from localStorage
   try {
     const saved = JSON.parse(localStorage.getItem('simple_todos'));
     if (Array.isArray(saved)) {
@@ -62,7 +61,7 @@
         input.value = todo.text;
         input.className = 'edit-input';
         
-        // Prevent saving twice if blur fires after keydown
+   
         let saved = false;
 
         const saveEdit = () => {
@@ -81,7 +80,7 @@
           if (e.key === 'Enter') {
             saveEdit();
           } else if (e.key === 'Escape') {
-            saved = true; // Skip saving
+            saved = true; 
             render();
           }
         });
@@ -119,7 +118,6 @@
     itemsLeftEl.textContent = `${activeCount} item${activeCount === 1 ? '' : 's'}`;
   }
 
-  // Form submit
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const value = input.value.trim();
@@ -131,7 +129,6 @@
     render();
   });
 
-  // Filters
   filters.forEach(btn => {
     btn.addEventListener('click', () => {
       filters.forEach(b => b.classList.remove('active'));
@@ -147,6 +144,5 @@
     render();
   });
 
-  // Initial render
   render();
 })();
