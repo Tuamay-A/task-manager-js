@@ -1,39 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="Style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="to-do-app">
-        <h1>To Do App</h1>
-        <form class="form-field">
-          <input
-            type="text"
-            id="input-form"
-            placeholder="Enter Any Task "
-            autofocus
-          />
-          <button type="submit" id="btn">
-            <i class="fa-solid fa-plus"></i>
-          </button>
-        </form>
-        <div class="output-container">
-          <ul id="list"></ul>
-        </div>
-      </div>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Todo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" aria-labelledby="app-title">
+    <header class="app-header">
+      <h1 id="app-title">Todo List</h1>
+    </header>
 
-    <script src="Script.js"></script>
-  </body>
+    <section class="todo-input" aria-label="Add new todo">
+      <form id="todo-form" autocomplete="off">
+        <input id="todo-input" name="todo" type="text" placeholder="What needs to be done?" aria-label="Todo text" required />
+        <button type="submit" class="btn primary">Add</button>
+      </form>
+    </section>
+
+    <section class="controls" aria-label="Todo controls">
+      <div class="filters" role="group" aria-label="Filters">
+        <button class="btn filter active" data-filter="all">All</button>
+        <button class="btn filter" data-filter="active">Active</button>
+        <button class="btn filter" data-filter="completed">Completed</button>
+      </div>
+      <div class="summary" aria-live="polite">
+        <span id="items-left">0 items</span>
+        <button id="clear-completed" class="btn" type="button">Clear Completed</button>
+      </div>
+    </section>
+
+    <section class="todo-list" aria-label="Todo list">
+      <ul id="todo-list" aria-live="polite"></ul>
+    </section>
+
+    <footer class="app-footer">
+      <small>Developed by Trea</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
